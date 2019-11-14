@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,11 +7,18 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  name = new FormControl('');
+  registerFormGroup = new FormGroup({
+
+    name : new FormControl('')
+});
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  updateValue(){
+    this.registerFormGroup.get("name").setValue("Shanta");
   }
 
 }

@@ -1,4 +1,14 @@
-<label>
+<form [formGroup]="registerFormGroup">
+  <label>
   Name:
-  <input type="text" [formControl]="name">
+  <input type="text" formControlName="name">
 </label>
+
+<p>
+  {{ registerFormGroup.get("name").value }}
+</p>
+
+<p>
+  <button (click)="updateValue()">Update Name</button>
+</p>
+</form>
